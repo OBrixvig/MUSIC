@@ -12,6 +12,11 @@ namespace Kvitten_min_bror
         public Drum(string name, int numberOfDrums) : base(name)
         {
             NumberOfDrums = numberOfDrums;
+            
+        }
+
+        public override void Play()
+        {
             using (var audioFile = new AudioFileReader(@"C:\Users\olive\Downloads\drum.wav"))
             using (var outputDevice = new WaveOutEvent())
             {
@@ -24,6 +29,7 @@ namespace Kvitten_min_bror
 
             }
         }
+
         public int NumberOfDrums { get; private set; }
         public override string ToString()
         {

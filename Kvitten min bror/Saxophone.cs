@@ -13,6 +13,11 @@ namespace Kvitten_min_bror
         public Saxophone(string name, int buttonCount) : base(name) //constructor arver "name" fra instrument.
             {
              ButtonCount = buttonCount;
+            
+        }
+
+        public override void Play()
+        {
             using (var audioFile = new AudioFileReader(@"C:\Users\olive\Downloads\sax.wav"))
             using (var outputDevice = new WaveOutEvent())
             {
@@ -25,7 +30,6 @@ namespace Kvitten_min_bror
 
             }
         }
-
         //property get.
         public int ButtonCount { get; private set; }
 

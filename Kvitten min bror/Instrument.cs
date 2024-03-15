@@ -18,7 +18,7 @@ namespace Kvitten_min_bror
             return Name;
         }
         //metode til at spille musikken.
-        public void Play()
+        public virtual void Play()
         {
 
         }

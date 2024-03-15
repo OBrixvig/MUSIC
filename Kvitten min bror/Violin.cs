@@ -13,6 +13,10 @@ namespace Kvitten_min_bror
         public Violin(string name, int pegBoxCount) : base(name, 4) 
         {
             PegBoxCount = pegBoxCount;
+           
+        }
+        public override void Play()
+        {
             using (var audioFile = new AudioFileReader(@"C:\Users\olive\Downloads\violin.wav"))
             using (var outputDevice = new WaveOutEvent())
             {

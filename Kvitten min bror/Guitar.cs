@@ -13,17 +13,7 @@ namespace Kvitten_min_bror
         {
             _acustisk = acustisk;
 
-            using (var audioFile = new AudioFileReader(@"C:\Users\olive\Downloads\guitar.wav"))
-            using (var outputDevice = new WaveOutEvent())
-            {
-                outputDevice.Init(audioFile);
-                outputDevice.Play();
-                while (outputDevice.PlaybackState == PlaybackState.Playing)
-                {
-                    Thread.Sleep(1000);
-                }
-
-            }
+            
         }
         public bool _acustisk { get; private set; }
 
@@ -36,6 +26,21 @@ namespace Kvitten_min_bror
             else
             {
             return Name + " go" + Numbersofstrings + " and the guitar is Electic HAIL METAL FUCKERS" ;
+            }
+        }
+
+        public override void Play()
+        {
+            using (var audioFile = new AudioFileReader(@"C:\Users\olive\Downloads\guitar.wav"))
+            using (var outputDevice = new WaveOutEvent())
+            {
+                outputDevice.Init(audioFile);
+                outputDevice.Play();
+                while (outputDevice.PlaybackState == PlaybackState.Playing)
+                {
+                    Thread.Sleep(1000);
+                }
+
             }
         }
 

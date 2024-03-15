@@ -10,10 +10,15 @@ namespace Kvitten_min_bror
     public class Piano : Stringinstrument //vi arver fra stringinstrument, som arver fra Instrument.
     {
         //constructor
-        public Piano(string name, int numberOfKeys, int footPedals) : base(name, 88) 
+        public Piano(string name, int numberOfKeys, int footPedals) : base(name, 88)
         {
             NumberOfKeys = numberOfKeys;
             FootPedals = footPedals;
+
+        }
+
+        public override void Play()
+        {
             using (var audioFile = new AudioFileReader(@"C:\Users\olive\Downloads\piano.wav"))
             using (var outputDevice = new WaveOutEvent())
             {
@@ -27,7 +32,7 @@ namespace Kvitten_min_bror
             }
         }
         //property for attributter. Get.
-        public int NumberOfKeys { get; private set;}
+        public int NumberOfKeys { get; private set; }
         public int FootPedals { get; private set; }
 
         //ToString metode:
@@ -35,9 +40,4 @@ namespace Kvitten_min_bror
         {
             return "This is a " + Name + ", it got " + FootPedals + " foot pedals and " + Numbersofstrings + "number of strings.";
         }
-       
-
-
-
     }
-}
